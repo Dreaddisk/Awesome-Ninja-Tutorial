@@ -9,7 +9,7 @@ public class Skill_Damage : MonoBehaviour
 
     public GameObject damageEffect;
 
-    // private EnemyHealth attackTarget;
+    private EnemyHealth attackTarget;
     private bool collided;
 
     #endregion
@@ -24,13 +24,13 @@ public class Skill_Damage : MonoBehaviour
                 continue;
             }
 
-            // attackTarget = c.gameObject.GetComponent<EnemyHealth>();
+            attackTarget = c.gameObject.GetComponent<EnemyHealth>();
             collided = true;
 
             if(collided)
             {
                 Instantiate(damageEffect, transform.position, transform.rotation);
-                // attackTarget.EnemyTakeDamage(damagecount);
+                attackTarget.EnemyTakeDamage(damageCount);
             }
         }
     }
